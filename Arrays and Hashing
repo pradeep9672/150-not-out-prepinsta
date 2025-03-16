@@ -26,3 +26,55 @@ class Main {
         return true;
     }
 }
+
+2. Using Sorting Techniue : 
+
+import java.util.*;
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        int[] ar={1,5,2,8,6,7,8};
+        System.out.println(Duplicate(ar));
+    }
+    public static boolean Duplicate(int[] arr)
+    {
+        Arrays.sort(arr);
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i]==arr[i+1])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+3. HashSet : Length of array == Size of Set -> No duplicates
+
+import java.util.*;
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        int[] ar={1,5,2,8,8};
+        System.out.println(Duplicate(ar));
+    }
+    public static boolean Duplicate(int[] arr)
+    {
+       HashSet<Integer> h = new HashSet<>();
+        for(int num:arr)
+        {
+            h.add(num);
+        }
+        if(h.size()==arr.length)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+
+
