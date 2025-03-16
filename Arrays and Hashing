@@ -1,0 +1,28 @@
+Arrays and HAshing :
+
+1. Duplicate Values : HashMap
+
+import java.util.*;
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        int[] ar={1,5,2,8,6,7};
+        System.out.println(Duplicate(ar));
+    }
+    public static boolean Duplicate(int[] arr)
+    {
+        HashMap<Integer,Integer>map=new HashMap<>();
+        for(int num  : arr)
+        {
+            map.put(num,map.getOrDefault(num,0)+1);
+        }
+        for(Integer m:map.keySet())
+        {
+            if(map.get(m)!=1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
