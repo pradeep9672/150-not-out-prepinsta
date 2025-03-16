@@ -1,0 +1,29 @@
+
+1. Using Sorting 
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String s1="Pradeep";
+        String s2="Ppeerad";
+        System.out.println(Anagram(s1,s2));
+    }
+    public static boolean Anagram(String first, String second )
+    {
+        if(first.length()!=second.length())
+            return false;
+        else
+        {
+            char[] c1 = first.toLowerCase().toCharArray();
+            char[] c2=second.toLowerCase().toCharArray();
+            Arrays.sort(c1);
+            Arrays.sort(c2);
+            for(int index=0;index<c1.length;index++)
+            {
+                if(c1[index]!=(c2[index]))
+                    return false;
+            }
+            return true;
+        }
+    }
+}
